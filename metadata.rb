@@ -1,6 +1,6 @@
 name             'chef-server'
-maintainer       'YOUR_COMPANY_NAME'
-maintainer_email 'YOUR_EMAIL'
+maintainer       'Nilesh Bairagi'
+maintainer_email 'nileshbairagi@gmail.com'
 license          'All rights reserved'
 description      'Installs/Configures chef-server'
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))

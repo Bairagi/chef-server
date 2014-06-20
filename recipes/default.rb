@@ -27,7 +27,7 @@ end
 
 execute "install_chef-server" do
   cwd "/opt"
-  command "dpkg -i #{node['chef-server']['package_file']}}"
+  command "dpkg -i #{node['chef-server']['package_file']}"
   notifies :run, 'execute[reconfigure-chef-server]', :immediately
 end
 
