@@ -8,7 +8,7 @@ execute "set_hostname" do
   not_if "hostname | grep #{node['chef-server']['fqdn']}"
 end
 
-file "/etc/hostname" do
+cookbook_file "/etc/hostname" do
   mode "0644"
   content node['chef-server']['fqdn']
 end
