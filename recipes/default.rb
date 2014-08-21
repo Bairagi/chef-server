@@ -32,6 +32,7 @@ execute "installing chef-server" do
   cwd "/opt"
   command "dpkg -i #{node['chef-server']['package_file']}"
   notifies :run, 'execute[reconfigure-chef-server]', :immediately
+  not_if "dpkg -l | grep chef-server"
 end
 
 # chef-server installation hack for lxc
