@@ -8,7 +8,7 @@ execute "set_hostname" do
   not_if "hostname | grep #{node['chef-server']['fqdn']}"
 end
 
-cookbook_file "/etc/hostname" do
+file "/etc/hostname" do
   mode "0644"
   content node['chef-server']['fqdn']
 end
@@ -35,7 +35,7 @@ execute "installing chef-server" do
 end
 
 # chef-server installation hack for lxc
-file "/opt/chef-server/embedded/cookbooks/chef-server/templates/default/postgresql.conf.erb" do
+cookbook_file "/opt/chef-server/embedded/cookbooks/chef-server/templates/default/postgresql.conf.erb" do
   mode "0644"
   source "postgresql.conf"
 end
